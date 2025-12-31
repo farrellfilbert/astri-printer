@@ -13,16 +13,48 @@
         img { max-width: 100%; display: block; border-radius: 8px; margin-bottom: 15px; }
 
         /* --- 1. MENU NAVIGASI (Sticky di Atas) --- */
+      /* --- UPDATE CSS NAVIGASI DENGAN LOGO --- */
         nav {
-            display: flex; justify-content: flex-end; align-items: center;
-            padding: 15px 40px; background-color: #333;
-            position: sticky; top: 0; z-index: 1000;
-            width: 100%;
+            display: flex;
+            justify-content: space-between; /* KUNCI: Memisahkan Logo (Kiri) dan Menu (Kanan) */
+            align-items: center;
+            padding: 10px 40px; /* Padding sedikit diatur agar logo muat */
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-        nav ul { list-style: none; display: flex; gap: 20px; }
-        nav a { text-decoration: none; color: white; font-weight: bold; font-size: 16px; transition: color 0.3s; }
-        nav a:hover { color: #ff3333; }
+
+        /* Style Khusus Gambar Logo */
+        .logo img {
+            height: 50px; /* Tinggi logo dibatasi agar menu tidak terlalu tebal */
+            width: auto;  /* Lebar menyesuaikan otomatis */
+            transition: transform 0.3s;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1); /* Efek zoom sedikit saat logo ditunjuk */
+        }
+
+        /* Style Menu (Sama seperti sebelumnya) */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff3333;
+        }
 
         /* --- WRAPPER UTAMA (Kertas Dokumen) --- */
         .page-wrapper {
