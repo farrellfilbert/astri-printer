@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asri Printer - Service Center</title>
+    <style>
+        /* Reset Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGASI --- */
+        /* --- UPDATE CSS NAVIGASI DENGAN LOGO --- */
+       /* --- UPDATE CSS NAVIGASI DENGAN LOGO --- */
+        nav {
+            display: flex;
+            justify-content: space-between; /* KUNCI: Memisahkan Logo (Kiri) dan Menu (Kanan) */
+            align-items: center;
+            padding: 10px 40px; /* Padding sedikit diatur agar logo muat */
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Style Khusus Gambar Logo */
+        .logo img {
+            height: 50px; /* Tinggi logo dibatasi agar menu tidak terlalu tebal */
+            width: auto;  /* Lebar menyesuaikan otomatis */
+            transition: transform 0.3s;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1); /* Efek zoom sedikit saat logo ditunjuk */
+        }
+
+        /* Style Menu (Sama seperti sebelumnya) */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff3333;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff3333;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            text-align: center;
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+
+        .hero-section h1 {
+            font-size: 5rem;
+            color: #d32f2f;
+            letter-spacing: 5px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        /* --- ANIMASI SLIDER --- */
+        .slider-area {
+            height: 350px;
+            margin: auto;
+            position: relative;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+
+        /* KUNCI AGAR SMOOTH ADA DI SINI */
+        .slide-track {
+            display: flex;
+            /* Rumus Lebar: (Lebar Foto 300px) x (Total Foto di HTML 20)
+               Kita punya 10 foto unik, jadi total HTML harus 20 (10 asli + 10 copy)
+            */
+            width: calc(300px * 20); 
+            animation: scroll 40s linear infinite; /* Waktu diperlambat agar gerak enak dilihat */
+        }
+
+        .slide {
+            height: 300px;
+            width: 300px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.5s;
+        }
+
+        .slide img:hover {
+            transform: scale(1.1);
+        }
+
+        /* LOGIKA ANIMASI INFINITE LOOP */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                /* Geser sejauh lebar 10 foto pertama saja.
+                   Begitu sampai di ujung foto ke-10, dia akan reset ke 0.
+                   Karena foto ke-11 (copy) sama dengan foto ke-1, mata tidak melihat lompatan.
+                */
+                transform: translateX(calc(-300px * 10)); 
+            }
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            background: #333;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 3rem; }
+            nav { justify-content: center; }
+            nav ul { gap: 15px; padding: 0; }
+            nav a { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+   <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.jpeg" alt="Logo Asri Printer">
+            </a>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Layanan</a></li>
+            <li><a href="gallery.html">Galeri</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero-section">
+        <h1>ASRI PRINTER</h1>
+    </div>
+
+    <div class="slider-area">
+        <div class="slide-track">
+            
+            <div class="slide"><img src="1.jpeg" alt="Service 1"></div>
+            <div class="slide"><img src="2.jpeg" alt="Service 2"></div>
+            <div class="slide"><img src="3.jpeg" alt="Service 3"></div>
+            <div class="slide"><img src="4.jpeg" alt="Service 4"></div>
+            <div class="slide"><img src="5.jpeg" alt="Service 5"></div>
+            <div class="slide"><img src="6.jpeg" alt="Service 6"></div>
+            <div class="slide"><img src="7.jpeg" alt="Service 7"></div>
+            <div class="slide"><img src="14.jpeg" alt="Service 8"></div>
+            <div class="slide"><img src="9.jpeg" alt="Service 9"></div>
+            <div class="slide"><img src="10.jpeg" alt="Service 10"></div>
+
+            <div class="slide"><img src="1.jpeg" alt="Service 1"></div>
+            <div class="slide"><img src="2.jpeg" alt="Service 2"></div>
+            <div class="slide"><img src="3.jpeg" alt="Service 3"></div>
+            <div class="slide"><img src="4.jpeg" alt="Service 4"></div>
+            <div class="slide"><img src="5.jpeg" alt="Service 5"></div>
+            <div class="slide"><img src="6.jpeg" alt="Service 6"></div>
+            <div class="slide"><img src="7.jpeg" alt="Service 7"></div>
+            <div class="slide"><img src="14.jpeg" alt="Service 8"></div>
+            <div class="slide"><img src="9.jpeg" alt="Service 9"></div>
+            <div class="slide"><img src="10.jpeg" alt="Service 10"></div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 ASRI PRINTER - Teknisi Kepercayaan Anda</p>
+    </footer>
+
+</body>
+</html>

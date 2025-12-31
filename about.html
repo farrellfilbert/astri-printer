@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Asri Printer</title>
+    <style>
+        /* --- RESET & BASIC STYLE --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background-color: #f4f4f4; color: #333; line-height: 1.6; }
+        
+        /* Gambar agar responsif */
+        img { max-width: 100%; display: block; border-radius: 8px; margin-bottom: 15px; }
+
+        /* --- 1. MENU NAVIGASI (Sticky di Atas) --- */
+        nav {
+            display: flex; justify-content: flex-end; align-items: center;
+            padding: 15px 40px; background-color: #333;
+            position: sticky; top: 0; z-index: 1000;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        nav ul { list-style: none; display: flex; gap: 20px; }
+        nav a { text-decoration: none; color: white; font-weight: bold; font-size: 16px; transition: color 0.3s; }
+        nav a:hover { color: #ff3333; }
+
+        /* --- WRAPPER UTAMA (Kertas Dokumen) --- */
+        .page-wrapper {
+            max-width: 800px;
+            margin: 30px auto; /* Jarak dari navigasi */
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding-bottom: 20px;
+        }
+
+        /* --- HEADER HALAMAN (Sesuai PDF) --- */
+        header.doc-header {
+            background-color: #d32f2f; /* Merah Branding */
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header.doc-header h1 { font-size: 3rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 10px; }
+        header.doc-header p { font-size: 1.5rem; font-weight: 300; margin-bottom: 20px; }
+        .btn-contact {
+            background: white; color: #d32f2f; padding: 10px 25px;
+            text-decoration: none; font-weight: bold; border-radius: 5px;
+            display: inline-block; text-transform: uppercase;
+        }
+
+        /* --- SECTIONS CONTENT --- */
+        section { padding: 40px 30px; border-bottom: 1px solid #eee; }
+        
+        /* Gaya Judul Per Bagian */
+        h2 { 
+            color: #d32f2f; 
+            text-transform: uppercase; 
+            font-size: 1.8rem; 
+            margin-bottom: 20px; 
+            border-left: 5px solid #d32f2f; 
+            padding-left: 15px; 
+        }
+        
+        h3 { color: #333; margin-bottom: 10px; margin-top: 20px; font-size: 1.3rem; }
+        
+        /* --- LAYOUT TEXT & GRID --- */
+        .about-text { text-align: justify; margin-bottom: 20px; }
+
+        /* Grid Layanan (2 Kolom) */
+        .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .service-item { background: #f9f9f9; padding: 20px; border-radius: 8px; }
+
+        /* Grid Sparepart (2 Kolom) */
+        .sparepart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .sparepart-item { border: 1px solid #ddd; padding: 15px; text-align: center; border-radius: 8px; }
+        .sparepart-item h4 { color: #d32f2f; margin-bottom: 10px; text-transform: uppercase; }
+
+        /* List Keunggulan */
+        .features { list-style: none; margin-top: 20px; }
+        .features li { margin-bottom: 20px; }
+        .features strong { display: block; color: #d32f2f; font-size: 1.2rem; }
+
+        /* --- FOOTER DOKUMEN --- */
+        .doc-footer { background: #222; color: white; padding: 40px 20px; text-align: center; }
+        .doc-footer h2 { border: none; color: white; padding: 0; margin-bottom: 10px; }
+        .contact-details { font-size: 1.2rem; margin-top: 20px; }
+        .contact-details div { margin-bottom: 10px; }
+
+        /* --- RESPONSIF HP --- */
+        @media (max-width: 768px) {
+            nav { justify-content: center; padding: 10px; }
+            nav ul { gap: 15px; font-size: 14px; }
+            .service-grid, .sparepart-grid { grid-template-columns: 1fr; }
+            header.doc-header h1 { font-size: 2rem; }
+            .page-wrapper { margin: 10px auto; width: 95%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.jpeg" alt="Logo Asri Printer">
+            </a>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Layanan</a></li>
+            <li><a href="gallery.html">Galeri</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-wrapper">
+        
+        <header class="doc-header">
+            <h1>ASRI PRINTER</h1> <p>Teknisi Kepercayaan Masalah Komputer Anda</p> <a href="https://wa.me/6287886303361" class="btn-contact">SEGERA HUBUNGI</a> </header>
+
+        <section>
+            <h2>About Us</h2> <div class="about-text">
+                <p>Di Asri Printer, kami mengkhususkan diri dalam ahli perbaikan untuk komputer, laptop, dan printer. Tim teknisi terampil kami berdedikasi untuk memberikan layanan berkualitas tinggi, memastikan perangkat Anda dikembalikan ke kinerja optimal.</p> <br>
+                <p>Kami juga menawarkan berbagai macam suku cadang untuk menjaga agar perangkat Anda tetap berjalan lancar. Baik itu perbaikan perangkat keras atau masalah perangkat lunak, komitmen kami terhadap keunggulan berarti Anda dapat mempercayai kami untuk memenuhi semua kebutuhan perbaikan Anda.</p> </div>
+            
+            <img src="foto_kegiatan.jpg" alt="Foto Teknisi Bekerja">
+        </section>
+
+        <section>
+            <h2>Layanan Kami</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>Perbaikan/Instal Software Komputer</h3> <p>Perbaikan cepat dan andal untuk semua masalah komputer. Teknisi berpengalaman kami menyediakan solusi efisien untuk mengatasi masalah perangkat keras dan perangkat lunak, memastikan komputer Anda kembali berjalan lancar dan efisien.</p> </div>
+                <div class="service-item">
+                    <h3>Solusi Perbaikan Printer</h3> <p>Diagnosa dan perbaikan ahli untuk semua merek printer. Kami mengkhususkan diri dalam mendiagnosis dan memperbaiki berbagai masalah printer, membantu Anda mengembalikan fungsi printer secara optimal dengan waktu pengerjaan yang cepat.</p> </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Menyediakan Berbagai Macam Sparepart</h2> <p style="margin-bottom: 20px;">Perangkat keras Anda rusak? Segera hubungi kami untuk perbaikan atau penggantian.</p> <div class="sparepart-grid">
+                <div class="sparepart-item">
+                    <img src="foto_part1.jpg" alt="Set Komputer">
+                    
+                    <h4>Set Komputer & Motherboards</h4> <p>CPU, Monitor, Keyboard, Mouse, dll.</p> </div>
+                <div class="sparepart-item">
+                    <img src="foto_part2.jpg" alt="RAM SSD">
+                    
+                    <h4>RAM & SSD</h4> <p>Tingkatkan RAM dan penyimpanan Anda agar kinerja komputer lebih kencang.</p> </div>
+                <div class="sparepart-item">
+                    <h4>Ink Cartridges</h4> <p>Tinta Anda habis? Segera hubungi kami untuk isi ulang cartridge Anda.</p> </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Kenapa Harus Pilih Kami?</h2> <p>Dapatkan perbaikan yang cepat dan andal dengan tim profesional kami yang berdedikasi. Dan jika Anda memiliki pertanyaan, kami juga menyediakan layanan tanya jawab jadi Anda tidak perlu bingung harus berbuat apa jika memiliki kendala.</p> <ul class="features">
+                <li>
+                    <strong>Respon Yang Cepat</strong> Kami memastikan perangkat Anda diperbaiki tanpa penundaan yang tidak perlu. </li>
+                <li>
+                    <strong>Teknisi Yang Berpengalaman</strong> Tim kami sangat terlatih untuk menangani semua masalah teknologi Anda. </li>
+                <li>
+                    <strong>Kualitas Terjamin</strong> Kami hanya menggunakan suku cadang asli untuk perbaikan yang andal dan tahan lama. </li>
+            </ul>
+        </section>
+
+        <footer class="doc-footer">
+            <h2>ASRI PRINTER</h2> <h3>Kami Siap Membantu</h3> <p>Hubungi kami untuk mendapatkan layanan ahli untuk semua kebutuhan komputer dan printer Anda hari ini!</p> <div class="contact-details">
+                <div style="color: #ff3333; font-weight: bold; margin-top: 20px;">SEGERA HUBUNGI</div> <div>Email: asriprinter80@gmail.com</div> <div>WhatsApp/Telp: 087886303361</div> <div>Website: asriprinter.com</div> </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

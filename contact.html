@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami - Asri Printer</title>
+    <style>
+        /* --- RESET & BASIC STYLE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background-color: #f4f4f4; color: #333; line-height: 1.6; }
+
+        /* --- NAVIGASI (SAMA DENGAN PAGE LAIN) --- */
+       /* --- UPDATE CSS NAVIGASI DENGAN LOGO --- */
+        nav {
+            display: flex;
+            justify-content: space-between; /* KUNCI: Memisahkan Logo (Kiri) dan Menu (Kanan) */
+            align-items: center;
+            padding: 10px 40px; /* Padding sedikit diatur agar logo muat */
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Style Khusus Gambar Logo */
+        .logo img {
+            height: 50px; /* Tinggi logo dibatasi agar menu tidak terlalu tebal */
+            width: auto;  /* Lebar menyesuaikan otomatis */
+            transition: transform 0.3s;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1); /* Efek zoom sedikit saat logo ditunjuk */
+        }
+
+        /* Style Menu (Sama seperti sebelumnya) */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff3333;
+        }
+
+        /* --- HEADER HALAMAN --- */
+        .page-header {
+            background-color: #d32f2f; /* Merah Branding */
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+        }
+        .page-header h1 { font-size: 3rem; font-weight: 900; letter-spacing: 2px; }
+        .page-header p { font-size: 1.2rem; opacity: 0.9; margin-top: 10px; }
+
+        /* --- KONTAINER UTAMA (GRID SYSTEM) --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Dua kolom: Info & Form */
+            gap: 40px;
+        }
+
+        /* --- KOLOM KIRI: INFO KONTAK --- */
+        .contact-info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .contact-info-card:hover {
+            transform: translateY(-5px); /* Efek naik dikit saat di-hover */
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .info-item:last-child { border-bottom: none; }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            background: #ffebee; /* Merah muda sangat pudar */
+            color: #d32f2f;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 20px;
+        }
+
+        .details h3 { font-size: 1.1rem; color: #555; margin-bottom: 5px; }
+        .details p { font-weight: bold; font-size: 1.1rem; color: #333; }
+        .details a { text-decoration: none; color: #333; transition: 0.3s; }
+        .details a:hover { color: #d32f2f; }
+
+        /* TOMBOL WHATSAPP BESAR */
+        .btn-wa-large {
+            display: block;
+            background-color: #25D366; /* Hijau WA */
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn-wa-large:hover {
+            background-color: #1ebe57;
+            transform: scale(1.02);
+        }
+
+        /* --- KOLOM KANAN: FORMULIR --- */
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-form h2 { margin-bottom: 20px; color: #d32f2f; }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            border-color: #d32f2f;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-submit:hover { background: #d32f2f; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* --- RESPONSIF HP --- */
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; } /* Jadi 1 kolom di HP */
+            .page-header h1 { font-size: 2rem; }
+            nav { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+   <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.jpeg" alt="Logo Asri Printer">
+            </a>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Layanan</a></li>
+            <li><a href="gallery.html">Galeri</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+        </ul>
+    </nav>
+    
+    <div class="page-header">
+        <h1>HUBUNGI KAMI</h1>
+        <p>Kami siap membantu menyelesaikan masalah komputer & printer Anda.</p>
+    </div>
+
+    <div class="container">
+        
+        <div class="contact-info-card">
+            
+            <div class="info-item">
+                <div class="icon">✉️</div> <div class="details">
+                    <h3>Email</h3>
+                    <p><a href="mailto:asriprinter80@gmail.com">asriprinter80@gmail.com</a></p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon">🌐</div> <div class="details">
+                    <h3>Website</h3>
+                    <p><a href="http://asriprinter.com" target="_blank">www.asriprinter.com</a></p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon">🕒</div> <div class="details">
+                    <h3>Jam Operasional</h3>
+                    <p>Senin - Minggu (Chat Kami)</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <p style="margin-bottom: 10px;">Butuh respon cepat?</p>
+                <a href="https://wa.me/6287886303361" class="btn-wa-large" target="_blank">
+                    Chat via WhatsApp Sekarang
+                </a>
+            </div>
+
+        </div>
+
+        <div class="contact-form">
+            <h2>Kirim Pesan</h2>
+            <form action="mailto:asriprinter80@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" name="nama" placeholder="Masukkan nama Anda" required>
+                </div>
+                <div class="form-group">
+                    <label>Nomor HP / WA</label>
+                    <input type="tel" name="telepon" placeholder="Contoh: 0812..." required>
+                </div>
+                <div class="form-group">
+                    <label>Keluhan / Pesan</label>
+                    <textarea name="pesan" rows="5" placeholder="Jelaskan masalah komputer/printer Anda..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">KIRIM PESAN</button>
+            </form>
+            <p style="font-size: 0.8rem; color: #777; margin-top: 10px; text-align: center;">
+                *Tombol ini akan membuka aplikasi Email Anda.
+            </p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Asri Printer - Teknisi Kepercayaan Anda</p>
+    </footer>
+
+</body>
+</html>
